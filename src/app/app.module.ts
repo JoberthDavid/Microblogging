@@ -1,3 +1,4 @@
+import { ApiService } from './servicos/api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +19,7 @@ import { MenuSugestoesComponent } from './componentes/menu-sugestoes/menu-sugest
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

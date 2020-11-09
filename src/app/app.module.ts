@@ -1,12 +1,14 @@
 import { ApiService } from './servicos/api.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BarraNavegacaoComponent } from './componentes/barra-navegacao/barra-navegacao.component';
 import { CabecalhoFeedsComponent } from './componentes/cabecalho-feeds/cabecalho-feeds.component';
 import { PostFeedsComponent } from './componentes/post-feeds/post-feeds.component';
 import { MenuSugestoesComponent } from './componentes/menu-sugestoes/menu-sugestoes.component';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import { MenuSugestoesComponent } from './componentes/menu-sugestoes/menu-sugest
     BarraNavegacaoComponent,
     CabecalhoFeedsComponent,
     PostFeedsComponent,
-    MenuSugestoesComponent
+    MenuSugestoesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

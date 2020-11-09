@@ -15,12 +15,14 @@ export class PostFeedsComponent implements OnInit {
   listTweets: Post[];
 
   constructor(private apiService: ApiService) {
-    this.listUser = this.apiService.getListUsers();
+    this.apiService.carregarDados(
+      () => this.listUser = this.apiService.todos()
+    );
 
     this.listTweets = this.apiService.getListTweets();
   }
 
-  getUser(userId: number){
+  getUserObject(userId: number){
     for(let i=0; i < this.listUser.length; i++){
       if (this.listUser[i].userId == userId){
         return this.listUser[i]
@@ -28,12 +30,16 @@ export class PostFeedsComponent implements OnInit {
     };
   }
 
+  getUser(userId: number){
+    return this.getUserObject(userId).user
+  }
+
   getUsername(userId: number){
-    return this.getUser(userId).username
+    return this.getUserObject(userId).username
   }
 
   getUserImage(userId: number){
-    return this.getUser(userId).userImage
+    return this.getUserObject(userId).userImage
   }
 
   ngOnInit(): void {

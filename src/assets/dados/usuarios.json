@@ -1,0 +1,56 @@
+[
+    {
+        "userId": 1,
+        "username": "Dani Calabresa",
+        "user": "@calabresa",
+        "userImage": "http://lorempixel.com/400/200/people/1/"
+    },
+    {
+        "userId": 2,
+        "username": "Amado Batista",
+        "user": "@batista",
+        "userImage": "http://lorempixel.com/400/200/people/2/"
+    },
+    {
+        "userId": 3,
+        "username": "Beto Barbosa",
+        "user": "@barbosa",
+        "userImage": "http://lorempixel.com/400/200/people/3/"
+    },
+    {
+        "userId": 4,
+        "username": "Sula Miranda",
+        "user": "@sulamiranda",
+        "userImage": "http://lorempixel.com/400/200/people/4/"
+    },
+    {
+        "userId": 5,
+        "username": "Léo Magalhães",
+        "user": "@magalhaes",
+        "userImage": "http://lorempixel.com/400/200/people/5/"
+    },
+    {
+        "userId": 6,
+        "username": "Roberta Miranda",
+        "user": "@miranda",
+        "userImage": "http://lorempixel.com/400/200/people/6/"
+    },
+    {
+        "userId": 7,
+        "username": "José Augusto",
+        "user": "@augusto",
+        "userImage": "http://lorempixel.com/400/200/people/7/"
+    },
+    {
+        "userId": 8,
+        "username": "Eduardo Costa",
+        "user": "@costa",
+        "userImage": "http://lorempixel.com/400/200/people/8/"
+    },
+    {
+        "userId": 9,
+        "username": "Maria da Silva",
+        "user": "@mariasilva",
+        "userImage": "http://lorempixel.com/400/200/people/9/"
+    }
+  ]

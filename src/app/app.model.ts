@@ -16,17 +16,17 @@ export class Usuario{
 
 export class Post{
 
-    postId: number;
+    id: number;
     postUserId: number;
+    url: string;
     descricao: string;
     postDate: number;
     curtida: boolean;
 
-    constructor(postId: number, postUserId: number, descricao: string, curtida: boolean) {
-        this.postId = postId;
-        this.postUserId = postUserId;
+    constructor(id: number, url: string, descricao: string, curtida: boolean) {
+        this.id = id;
+        this.url = url;
         this.descricao = descricao;
-        this.postDate = Date.UTC(2020, 11, postId);
         this.curtida = curtida;
     }
     

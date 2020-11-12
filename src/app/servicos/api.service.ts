@@ -9,27 +9,26 @@ import { Post, Usuario } from './../app.model';
 export class ApiService {
 
   private listUser = null;
+  private listTweets = null;
 
   constructor(private http: HttpClient) {
-   }
+   };
 
-  carregarDados(callback){
+  carregarUsuarios(callback){
     this.http.get('./assets/dados/usuarios.json').subscribe(listUser => this.listUser = listUser).add(callback);
-  }
+  };
 
-  todos(): Array<Usuario>{
+  todosUsuarios(): Array<Usuario>{
     return this.listUser
-  }
+  };
 
-  getListTweets(){
-    return [
-      new Post(101,1,'Lorem ipsum.',true),
-      new Post(102,2,'Dolor sit amet.',false),
-      new Post(103,3,'Consectetur adipisicing elit.',false),
-      new Post(104,4,'Voluptates et voluptatibus vel tenetur quos.',false),
-      new Post(105,5,'Id omnis sed error fuga necessitatibus.',false)
-    ];
+  carregarTweets(callback){
+    this.http.get('./assets/dados/tweets.json').subscribe(listTweets => this.listTweets = listTweets).add(callback);
+    //console.log(this.http.get('https://lpweb-microblog.herokuapp.com/api/textos/').subscribe(listTweets => this.listTweets = listTweets).add(callback));
+  };
 
-  }
+  todosTweets(): Array<Post>{
+    return this.listTweets
+  };
 
 }

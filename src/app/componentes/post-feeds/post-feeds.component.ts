@@ -1,5 +1,5 @@
 import { ApiService } from './../../servicos/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { Usuario, Post } from './../../app.model';
 
@@ -10,16 +10,38 @@ import { Usuario, Post } from './../../app.model';
 })
 export class PostFeedsComponent implements OnInit {
 
-  listUser: Usuario[];
+  @Output()
+  onEdit = new EventEmitter<any>();
 
-  listTweets: Post[];
+  @Output()
+  onDelete = new EventEmitter<any>();
+
+  listUser: any = [];
+
+  listTweets: any = [];
+
+  editando : Post = { id: 0, postUserId: 0, descricao: '', curtida: false };
+  descricao = null;
+  postUserId = null;
+  id = null;
+  curtida = false;
 
   constructor(private apiService: ApiService) {
-    this.apiService.carregarUsuarios(
-      () => this.listUser = this.apiService.todosUsuarios() 
+    this.getUserList();
+    this.getPostList();
+  }
+
+  getUserList(){
+    this.apiService.carregarUsuarios().subscribe(
+      listUser => this.listUser = listUser,
+      () => console.error('Deu erro ao carregar o JSON')
     );
-    this.apiService.carregarTweets(
-      () => this.listTweets = this.apiService.todosTweets()
+  }
+
+  getPostList(){
+    this.apiService.carregarTweets().subscribe(
+      listTweets => this.listTweets = listTweets,
+      () => console.error('Deu erro na requisição') 
     );
   }
 
@@ -61,6 +83,41 @@ export class PostFeedsComponent implements OnInit {
 
   getCurtida(id: number){
     return this.getTweetObject(id).curtida
+  }
+
+  salvar() {
+    this.editando.descricao = this.descricao;
+    this.editando.postUserId = this.postUserId;
+    this.editando.curtida = this.curtida;
+    this.editando.id = this.id;
+
+    this.apiService.salvar( this.editando ).subscribe(
+      (dados) => { this.getPostList();},
+      error => console.log(error)
+    );
+
+    this.descricao = null;
+    this.editando = { id: 0, postUserId: 0, descricao: '', curtida: false};
+  }
+
+  editar(post: Post) {
+    this.editando = post;
+    this.descricao = post.descricao;
+    this.postUserId = post.postUserId;
+    this.id = post.id;
+    this.curtida = post.curtida;
+  }
+
+  excluir(post: Post) {
+    if (this.editando == post) {
+      alert('Não é possivel excluir publicação em edição');
+    } else {
+      if (confirm('Tem certeza que deseja excluir a publicação?')) {
+        this.apiService.excluir(post).subscribe(
+          dados => this.getPostList(),
+          erro => console.log(erro));
+      }
+    }
   }
 
   ngOnInit(): void {

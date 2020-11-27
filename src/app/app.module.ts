@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BarraNavegacaoComponent } from './componentes/barra-navegacao/barra-navegacao.component';
-import { CabecalhoFeedsComponent } from './componentes/cabecalho-feeds/cabecalho-feeds.component';
 import { PostFeedsComponent } from './componentes/post-feeds/post-feeds.component';
 import { MenuSugestoesComponent } from './componentes/menu-sugestoes/menu-sugestoes.component';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +13,6 @@ import { NgModule } from '@angular/core';
   declarations: [
     AppComponent,
     BarraNavegacaoComponent,
-    CabecalhoFeedsComponent,
     PostFeedsComponent,
     MenuSugestoesComponent,
   ],

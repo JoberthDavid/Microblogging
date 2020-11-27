@@ -110,6 +110,12 @@
   .btn-top:hover {
     background-color: #d9ebf7;
   }
+
+  .btn-primary {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+  }
   
   .middle-content {
     position: absolute;

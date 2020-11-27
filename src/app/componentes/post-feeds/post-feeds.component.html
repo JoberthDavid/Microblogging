@@ -1,3 +1,21 @@
+<div class="header-top" id="home">
+    <h4>Página inicial</h4>
+    <i class="far fa-star"></i>
+</div>
+<div class="header-post" >
+    <div class="header-img-wrapper">
+        <img src='http://lorempixel.com/400/200/people/3/' />
+    </div>
+
+    <form #cadastro="ngForm" (submit)='salvar()'>
+        <input type="text" placeholder="O que está acontecendo?" id="id" name="descricao" [(ngModel)]="descricao" />
+    </form>
+    <i class="far fa-image"></i>
+    <button type="submit" class="btn btn-primary" (click)="salvar()"><i class="far fa-paper-plane"></i></button>
+
+</div>
+
+
 <div class="post" *ngFor="let tweet of listTweets">
     <div class="user-avatar">
         <img [src]='getUserImage( tweet.id )' />
@@ -12,15 +30,14 @@
         <p class="post-text"  >{{ getDescricao( tweet.id ) }}</p>
         
         <div class="post-img">
-            <img src='http://lorempixel.com/400/200/city/{{ tweet.id }}/'/>
+            <img src='http://lorempixel.com/400/200/city/{{ tweet.random }}/'/>
         </div> 
         
         <div class="post-icons">
-            <i class="far fa-comment"></i>
-            <i class="fas fa-retweet"></i>
+            <a href="#home" class="btn btn-primary" (click)="editar(tweet)"><i class="far fa-edit"></i></a>
+            <button class="btn btn-primary" (click)="excluir(tweet)"><i class="fas fa-trash"></i></button>
             <i class="far fa-heart"></i>
-            <i class="fas fa-share-alt"></i>
         </div>
         
     </div>
-</div>
+</div> 

@@ -9,6 +9,8 @@ import { PostFeedsComponent } from './componentes/post-feeds/post-feeds.componen
 import { MenuSugestoesComponent } from './componentes/menu-sugestoes/menu-sugestoes.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { PostDetailComponent } from './componentes/post-detail/post-detail.component';
+import { NotFoundComponent } from './componentes/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NgModule } from '@angular/core';
     BarraNavegacaoComponent,
     PostFeedsComponent,
     MenuSugestoesComponent,
+    PostDetailComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

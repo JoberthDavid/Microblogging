@@ -36,7 +36,7 @@
         <div class="post-icons">
             <a href="#editor" class="btn btn-primary" (click)="editar(tweet)"><i class="far fa-edit"></i></a>
             <button class="btn btn-primary" (click)="excluir(tweet)"><i class="fas fa-trash"></i></button>
-            <a routerLink="detail" class="btn btn-primary"><i class="fas fa-glasses"></i></a>
+            <a routerLink="{{ getUsername( tweet.id ) }}/{{ getUser( tweet.id ) }}/{{ tweet.id }}" class="btn btn-primary"><i class="fas fa-glasses"></i></a>
             <i class="far fa-heart"></i>
         </div>
         

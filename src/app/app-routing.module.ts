@@ -7,7 +7,7 @@ import { PostFeedsComponent } from './componentes/post-feeds/post-feeds.componen
 
 const routes: Routes = [
   {path: '', component: PostFeedsComponent},
-  {path: 'detail', component: PostDetailComponent},
+  {path: ':nome/:usuario/:id', component: PostDetailComponent},
   {path: '**', component: NotFoundComponent},
 ];
 

@@ -4,16 +4,22 @@
     <div class="post-content" >
 
         <div class="post-user-info" >
-            <h4> getUsername( 1 ) </h4>
-            <i class="fas fa-check-circle"></i>
-            <span> getUser( 1 ) </span>
+            <h4>Dados consumidos do JSON</h4>
         </div>
-        <p class="post-text"  > getDescricao( 1 ) </p>
+
+        <p class="post-text">{{ getUsername() }}</p>
+        <p class="post-text">{{ getUser() }}</p>
+
+        <div class="post-user-info" >
+            <h4>Dados consumidos da API</h4>
+        </div>
+
+        <p class="post-text">{{ getId() }}</p>
+        <p class="post-text">{{ getUrl() }}</p>
+        <p class="post-text">{{ getDescricao() }}</p>
+        <p class="post-text">{{ getCurtida() }}</p>
         
-        <div class="post-img">
-            <img src='http://lorempixel.com/400/200/city/1/'/>
-        </div> 
-        
+
         <div class="post-icons">
             <a routerLink="" class="btn btn-primary"><p class="post-text">Voltar para o feeds</p></a>
         </div>

@@ -32,6 +32,10 @@ export class ApiService {
     return this.listTweets
   };
 
+  getTweet(id: string){
+    return this.http.get( this.API + id + "/" )
+  }
+
   salvar(post: Post) {
     if (post.id) {
       return this.http.patch( this.API + post.id + '/', { descricao: post.descricao } );
